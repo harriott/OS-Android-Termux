@@ -10,15 +10,15 @@
 
 alias o=echo
 cb(){
-  cp $T/bash_profile $HOME/.bash_profile
-  cp $T/inputrc $HOME/.inputrc
+  cp $OSAT/bash_profile $HOME/.bash_profile
+  cp $OSAT/inputrc $HOME/.inputrc
 } # configure Bash
 [[ $(getprop) =~ CPH2375 ]] && export st=/storage/emulated/0  # OPPO A76
 [[ $(getprop) =~ XQ-AU52 ]] && export st=/storage/EA90-C4AC  # Sony Xperia 10 II
   export core=$st/Dr-JH-core
     [[ $(getprop) =~ CPH2375 ]] && export Sh=$st/Dr-JH-Sh-OppoA76
     [[ $(getprop) =~ XQ-AU52 ]] && export Sh=$st/Dr-JH-Sh-XA10II
-    export T=$core/IT_stack/unix_like-Android/Termux
+    export OSAT=$core/IT_stack/onGitHub/OS-Android-Termux
 export phone=$(getprop | grep ro.product.odm.model | awk '{print $2}')
 
 #=> better file managing
