@@ -1,0 +1,38 @@
+# vim: set fdl=2 ft=sh:
+
+# $ITstack/unix_like-Android/Termux/inputrc - configure GNU Readline
+# placed by  cb() ($ITstack/unix_like-Android/Termux/bash_profile)
+
+#=> colorized completion
+# (these settings are masked by fzf)
+set colored-stats on  # use  LS_COLORS
+set visible-stats on  # symlink@
+set mark-symlinked-directories on  # ?
+# color the common prefix
+    set colored-completion-prefix On
+    set menu-complete-display-prefix On  # in menu-complete
+
+#=> history
+$include /data/data/com.termux/files/usr/etc/inputrc
+set keymap vi-command
+# these are for vi-command mode
+"\e[A": history-search-backward  # arrow up
+"\e[B": history-search-forward   # arrow down
+j: history-search-forward
+k: history-search-backward
+set keymap vi-insert
+# these are for vi-insert mode
+"\e[A": history-search-backward  # arrow up
+"\e[B": history-search-forward   # arrow down
+
+#=> vi-style editing
+set editing-mode vi
+#
+#==> Mode indicator in prompt
+set show-mode-in-prompt on
+set vi-cmd-mode-string "c "
+set vi-ins-mode-string "i "
+# These break editing of lines:
+#  set vi-cmd-mode-string "\e[0;31mc "  # Red for command mode
+#  set vi-ins-mode-string "\e[0;32mi "  # Green for insert mode
+
